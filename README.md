@@ -1,30 +1,83 @@
-# PassQuirkRPG
+# PassQuirkRPG Discord Bot Embed System
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+A comprehensive Discord bot embed system for PassQuirkRPG with web preview capabilities.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/neomaffofficial-gmailcoms-projects/v0-pass-quirk-rpg)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/4Q7XfghhtK3)
+## 📁 Project Structure
 
-## Overview
+\`\`\`
+passquirk-rpg-embeds/
+├── README.md
+├── package.json
+├── server.js
+├── discord-embeds/          # Discord.js embed code
+│   ├── inventory-panel/
+│   ├── battle-panel/
+│   ├── tournament-panel/
+│   ├── dungeon-panel/
+│   └── character-creation-panel/
+├── web-preview/             # Web preview system
+│   ├── index.html
+│   ├── css/
+│   ├── js/
+│   └── components/
+└── assets/                  # Images and resources
+\`\`\`
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## 🚀 Quick Start
 
-## Deployment
+### Prerequisites
+- Node.js 16+ 
+- npm or yarn
 
-Your project is live at:
+### Installation
+\`\`\`bash
+# Clone or download the project
+cd passquirk-rpg-embeds
 
-**[https://vercel.com/neomaffofficial-gmailcoms-projects/v0-pass-quirk-rpg](https://vercel.com/neomaffofficial-gmailcoms-projects/v0-pass-quirk-rpg)**
+# Install dependencies
+npm install
 
-## Build your app
+# Start the preview server
+npm start
+\`\`\`
 
-Continue building your app on:
+### Web Preview
+Open `http://localhost:3000` in your browser to preview all embeds.
 
-**[https://v0.dev/chat/projects/4Q7XfghhtK3](https://v0.dev/chat/projects/4Q7XfghhtK3)**
+### Discord Bot Integration
+\`\`\`javascript
+const { PassQuirkRPGEmbeds } = require('./discord-embeds');
+const embeds = new PassQuirkRPGEmbeds();
 
-## How It Works
+// Use in your Discord bot
+const inventoryEmbed = embeds.createInventoryEmbed(playerData);
+await interaction.reply(inventoryEmbed);
+\`\`\`
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## 📋 Features
+
+- ✅ Complete Discord.js embed system
+- ✅ Web preview with exact Discord styling
+- ✅ Responsive design for all devices
+- ✅ Interactive components (pagination, buttons)
+- ✅ Modular architecture
+- ✅ TypeScript support
+- ✅ Comprehensive documentation
+
+## 🎨 Available Panels
+
+1. **Inventory Panel** - Item management with pagination
+2. **Battle Panel** - Combat encounters with HP/MP tracking
+3. **Tournament Panel** - PvP rankings and rewards
+4. **Dungeon Panel** - Exploration with navigation
+5. **Character Creation Panel** - Character setup confirmation
+
+## 📖 Documentation
+
+Each panel folder contains:
+- `README.md` - Panel documentation
+- `*_header.js` - Header components
+- `*_body.js` - Body content
+- `*_footer.js` - Footer and buttons
+- `*_manager.js` - Main manager
+- `preview.html` - Web preview
