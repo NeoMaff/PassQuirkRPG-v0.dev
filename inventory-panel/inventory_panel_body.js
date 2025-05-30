@@ -1,61 +1,61 @@
-// inventory_panel_body.js - Body component for inventory panel
-// Contains item listings with descriptions, stats, and values
+// inventory_panel_body.js - Componente del cuerpo para el panel de inventario
+// Contiene listados de objetos con descripciones, estadísticas y valores
 
 function createInventoryBody(page = 1) {
   const inventoryItems = {
     1: [
       {
-        name: "🪢 Rope",
+        name: "🪢 Cuerda",
         description:
-          "A fine rope woven from horsehair and grasses, looks like it can easily hold the weight of a large man or orc.",
-        value: "💰 3 Value",
+          "Una fina cuerda tejida con crin de caballo y hierbas, parece que puede soportar fácilmente el peso de un hombre grande u orco.",
+        value: "💰 3 Valor",
         equipped: false,
       },
       {
-        name: "🧪 Skill Potion",
-        description: "Skill +4: Replenishes your skill score",
-        value: "💰 2 Value",
+        name: "🧪 Poción de Habilidad",
+        description: "Habilidad +4: Repone tu puntuación de habilidad",
+        value: "💰 2 Valor",
         equipped: false,
       },
       {
-        name: "🧪 Stamina Potion",
-        description: "Stamina +4: Adds to your stamina score",
-        value: "💰 3 Value",
+        name: "🧪 Poción de Resistencia",
+        description: "Resistencia +4: Añade a tu puntuación de resistencia",
+        value: "💰 3 Valor",
         equipped: false,
       },
     ],
     2: [
       {
-        name: "🧪 Stamina Restorer",
-        description: "Stamina +12: Restores a large amount of stamina",
-        value: "💰 5 Value",
+        name: "🧪 Restaurador de Resistencia",
+        description: "Resistencia +12: Restaura una gran cantidad de resistencia",
+        value: "💰 5 Valor",
         equipped: false,
       },
       {
-        name: "🧪 Stamina Restorer",
-        description: "Stamina +12: Restores a large amount of stamina",
-        value: "💰 5 Value",
+        name: "🧪 Restaurador de Resistencia",
+        description: "Resistencia +12: Restaura una gran cantidad de resistencia",
+        value: "💰 5 Valor",
         equipped: false,
       },
       {
-        name: "🛡️ Tin armour",
-        description: "Armour +1: A set of quite flimsy tin armour",
-        value: "💰 2 Value",
+        name: "🛡️ Armadura de estaño",
+        description: "Armadura +1: Un conjunto de armadura de estaño bastante endeble",
+        value: "💰 2 Valor",
         equipped: false,
       },
     ],
     3: [
       {
-        name: "🪓 Tin axe",
-        description: "Weapon +1: A flimsy tin axe, used throughout the countryside for felling small trees",
-        value: "🟡 Equipped 💰 5 Value",
+        name: "🪓 Hacha de estaño",
+        description: "Arma +1: Un hacha de estaño endeble, utilizada en todo el campo para talar árboles pequeños",
+        value: "🟡 Equipado 💰 5 Valor",
         equipped: true,
       },
       {
-        name: "🔮 Crystal ball",
+        name: "🔮 Bola de cristal",
         description:
-          "A fortune tellers crystal ball, old battered and used. Made of glass of course, not real crystal, and probably worthless.",
-        value: "💰 1 Value",
+          "Una bola de cristal de adivino, vieja, maltratada y usada. Hecha de vidrio, por supuesto, no de cristal real, y probablemente sin valor.",
+        value: "💰 1 Valor",
         equipped: false,
       },
     ],

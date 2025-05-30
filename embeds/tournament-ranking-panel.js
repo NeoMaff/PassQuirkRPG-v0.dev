@@ -2,10 +2,10 @@ const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("
 
 function createTournamentRankingEmbed(tournamentData) {
   const embed = new EmbedBuilder()
-    .setTitle("🏆 Weekly PvP Tournament Ranking")
+    .setTitle("🏆 Clasificación del Torneo PvP Semanal")
     .setColor(0xfee75c)
     .setDescription(
-      "**Rank 1:** 🥇 20,000\n**Rank 2:** 🥈 10,000\n**Rank 3:** 🥉 5,000\n**Rank 4-10:** 💰 3,000\n**Rank 11-100:** 💰 1,000\n\nBelow are the current top 10 ranked players:",
+      "**Rango 1:** 🥇 20,000\n**Rango 2:** 🥈 10,000\n**Rango 3:** 🥉 5,000\n**Rango 4-10:** 💰 3,000\n**Rango 11-100:** 💰 1,000\n\nA continuación se muestran los 10 mejores jugadores actuales:",
     )
     .addFields(
       {
@@ -28,14 +28,14 @@ function createTournamentRankingEmbed(tournamentData) {
       },
     )
     .setFooter({
-      text: `${tournamentData.playerName}, you currently have 🥇 ${tournamentData.playerMedals} medals.\nType '/pvp tournament' to challenge other players and improve your ranking.`,
+      text: `${tournamentData.playerName}, actualmente tienes 🥇 ${tournamentData.playerMedals} medallas.\nEscribe '/pvp torneo' para desafiar a otros jugadores y mejorar tu clasificación.`,
     })
     .setThumbnail("https://cdn.discordapp.com/attachments/placeholder/tournament-logo.png")
 
   const row = new ActionRowBuilder().addComponents(
-    new ButtonBuilder().setCustomId("join_tournament").setLabel("⚔️ Join Tournament").setStyle(ButtonStyle.Primary),
-    new ButtonBuilder().setCustomId("view_my_rank").setLabel("📊 My Ranking").setStyle(ButtonStyle.Secondary),
-    new ButtonBuilder().setCustomId("tournament_rules").setLabel("📋 Rules").setStyle(ButtonStyle.Secondary),
+    new ButtonBuilder().setCustomId("join_tournament").setLabel("⚔️ Unirse al Torneo").setStyle(ButtonStyle.Primary),
+    new ButtonBuilder().setCustomId("view_my_rank").setLabel("📊 Mi Clasificación").setStyle(ButtonStyle.Secondary),
+    new ButtonBuilder().setCustomId("tournament_rules").setLabel("📋 Reglas").setStyle(ButtonStyle.Secondary),
   )
 
   return { embeds: [embed], components: [row] }

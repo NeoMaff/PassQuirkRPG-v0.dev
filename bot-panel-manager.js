@@ -12,63 +12,63 @@ class BotPanelManager {
     this.activeEmbeds = new Map()
   }
 
-  // Inventory Panel
+  // Panel de Inventario
   async showInventory(interaction, playerData, page = 1) {
     const embedData = createInventoryEmbed(playerData, page)
     await interaction.reply(embedData)
     this.activeEmbeds.set(interaction.user.id, "inventory")
   }
 
-  // Character Creation Panel
+  // Panel de Creación de Personaje
   async showCharacterCreation(interaction, playerData) {
     const embedData = createCharacterCreationEmbed(playerData)
     await interaction.reply(embedData)
     this.activeEmbeds.set(interaction.user.id, "character_creation")
   }
 
-  // Battle Panel
+  // Panel de Batalla
   async showBattle(interaction, playerData, enemyData, locationData) {
     const embedData = createBattleEmbed(playerData, enemyData, locationData)
     await interaction.reply(embedData)
     this.activeEmbeds.set(interaction.user.id, "battle")
   }
 
-  // Tournament Ranking Panel
+  // Panel de Clasificación de Torneo
   async showTournamentRanking(interaction, tournamentData) {
     const embedData = createTournamentRankingEmbed(tournamentData)
     await interaction.reply(embedData)
     this.activeEmbeds.set(interaction.user.id, "tournament")
   }
 
-  // Dungeon Navigation Panel
+  // Panel de Navegación de Mazmorra
   async showDungeonNavigation(interaction, playerData, dungeonData) {
     const embedData = createDungeonNavigationEmbed(playerData, dungeonData)
     await interaction.reply(embedData)
     this.activeEmbeds.set(interaction.user.id, "dungeon")
   }
 
-  // Gear Equipped Panel
+  // Panel de Equipo Equipado
   async showGearEquipped(interaction, playerData, equippedItem) {
     const embedData = createGearEquippedEmbed(playerData, equippedItem)
     await interaction.reply(embedData)
     this.activeEmbeds.set(interaction.user.id, "gear_equipped")
   }
 
-  // Filtered Targets Panel
+  // Panel de Objetivos Filtrados
   async showFilteredTargets(interaction, playerData, completedTargets) {
     const embedData = createFilteredTargetsEmbed(playerData, completedTargets)
     await interaction.reply(embedData)
     this.activeEmbeds.set(interaction.user.id, "filtered_targets")
   }
 
-  // PvP Encounter Panel
+  // Panel de Encuentro PvP
   async showPvPEncounter(interaction, playerData, opponentData) {
     const embedData = createPvPEncounterEmbed(playerData, opponentData)
     await interaction.reply(embedData)
     this.activeEmbeds.set(interaction.user.id, "pvp_encounter")
   }
 
-  // Handle button interactions
+  // Manejar interacciones de botones
   async handleButtonInteraction(interaction) {
     const customId = interaction.customId
     const userId = interaction.user.id
@@ -94,55 +94,67 @@ class BotPanelManager {
   }
 
   async handleInventoryButtons(interaction, customId) {
-    // Handle inventory pagination and actions
+    // Manejar paginación de inventario y acciones
     if (customId.includes("next") || customId.includes("prev")) {
       const page = Number.parseInt(customId.split("_")[2]) || 1
       const newPage = customId.includes("next") ? page + 1 : page - 1
-      // Reload inventory with new page
-      // Implementation depends on your database structure
+      // Recargar inventario con nueva página
+      // La implementación depende de tu estructura de base de datos
     }
   }
 
   async handleBattleButtons(interaction, customId) {
-    const action = customId.split("_")[1]
-    // Handle battle actions: shoot, bane, heal, potion, defend, escape
-    await interaction.reply({ content: `You chose to ${action}!`, ephemeral: true })
+    const actions = {
+      battle_shoot: "🏹 ¡Disparaste una flecha!",
+      battle_bane: "💀 ¡Lanzaste un hechizo de maldición!",
+      battle_heal: "💚 ¡Te has curado!",
+      battle_potion: "🧪 ¡Usaste una poción!",
+      battle_defend: "🛡️ ¡Te defendiste!",
+      battle_escape: "🏃 ¡Escapaste de la batalla!",
+    }
+
+    const message = actions[customId] || "¡Acción desconocida!"
+    await interaction.reply({ content: message, ephemeral: true })
+
+    if (customId === "battle_escape") {
+      this.activeEmbeds.delete(interaction.user.id)
+    }
   }
 
   async handleDungeonButtons(interaction, customId) {
     const direction = customId.split("_")[1]
-    // Handle dungeon navigation: left, straight, right, potion, abandon
-    await interaction.reply({ content: `You went ${direction}!`, ephemeral: true })
+    // Manejar navegación de mazmorra: izquierda, recto, derecha, poción, abandonar
+    await interaction.reply({ content: `¡Fuiste ${direction}!`, ephemeral: true })
   }
 
   async handlePvPButtons(interaction, customId) {
     const action = customId.split("_")[1]
-    // Handle PvP actions: shoot, bane, heal, defend, surrender
-    await interaction.reply({ content: `You used ${action} in PvP!`, ephemeral: true })
+    // Manejar acciones PvP: disparar, maldición, curar, defender, rendirse
+    await interaction.reply({ content: `¡Usaste ${action} en PvP!`, ephemeral: true })
   }
 
   async handleGenericButtons(interaction, customId) {
-    // Handle other button interactions
+    // Manejar otras interacciones de botones
     switch (customId) {
       case "start_quest":
-        await interaction.reply({ content: "Starting your quest...", ephemeral: true })
+        await interaction.reply({ content: "Iniciando tu misión...", ephemeral: true })
         break
       case "view_character":
-        await interaction.reply({ content: "Showing character profile...", ephemeral: true })
+        await interaction.reply({ content: "Mostrando perfil de personaje...", ephemeral: true })
         break
       case "join_tournament":
-        await interaction.reply({ content: "Joining tournament...", ephemeral: true })
+        await interaction.reply({ content: "Uniéndose al torneo...", ephemeral: true })
         break
       default:
-        await interaction.reply({ content: "Button action not implemented yet.", ephemeral: true })
+        await interaction.reply({ content: "Acción de botón aún no implementada.", ephemeral: true })
         break
     }
   }
 
-  // Clean up inactive embeds
+  // Limpiar embeds inactivos
   cleanupInactiveEmbeds() {
-    // Remove embeds older than 15 minutes
-    // Implementation depends on your needs
+    // Eliminar embeds más antiguos de 15 minutos
+    // La implementación depende de tus necesidades
   }
 }
 

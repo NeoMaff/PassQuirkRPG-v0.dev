@@ -2,38 +2,38 @@ const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("
 
 function createGearEquippedEmbed(playerData, equippedItem) {
   const embed = new EmbedBuilder()
-    .setTitle("✅ New gear equipped!")
+    .setTitle("✅ ¡Nuevo equipo equipado!")
     .setColor(0x57f287)
-    .setDescription(`**${playerData.name}**, you successfully equipped your new gear!`)
+    .setDescription(`**${playerData.name}**, ¡has equipado exitosamente tu nuevo equipo!`)
     .addFields(
       {
-        name: "🎒 Equipped Item",
-        value: `**${equippedItem.name}**\n${equippedItem.description}\n**Stats:** ${equippedItem.stats}`,
+        name: "🎒 Objeto Equipado",
+        value: `**${equippedItem.name}**\n${equippedItem.description}\n**Estadísticas:** ${equippedItem.stats}`,
         inline: false,
       },
       {
-        name: "📊 Instructions",
-        value: `Type \`/profile\` to view your new stats.\n\nType \`/search\` to continue your quest`,
+        name: "📊 Instrucciones",
+        value: `Escribe \`/perfil\` para ver tus nuevas estadísticas.\n\nEscribe \`/buscar\` para continuar tu misión`,
         inline: false,
       },
     )
     .setThumbnail(equippedItem.image || "https://cdn.discordapp.com/attachments/placeholder/gear-icon.png")
     .setFooter({
-      text: `Today at ${new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" })}`,
+      text: `Hoy a las ${new Date().toLocaleTimeString("es-ES", { hour: "2-digit", minute: "2-digit" })}`,
     })
 
   const optionsEmbed = new EmbedBuilder()
-    .setTitle("⚙️ OPTIONS")
+    .setTitle("⚙️ OPCIONES")
     .setColor(0x2f3136)
     .setDescription(
-      "**potions**\n\n**lootbox**\n\n**fairy**\n\n🛒 **buy** buy potion, lootbox, fairy\n\n🔥 **/marketplace** **buy**",
+      "**pociones**\n\n**cofre**\n\n**hada**\n\n🛒 **comprar** comprar poción, cofre, hada\n\n🔥 **/mercado** **comprar**",
     )
-    .setFooter({ text: "(edited)" })
+    .setFooter({ text: "(editado)" })
 
   const row = new ActionRowBuilder().addComponents(
-    new ButtonBuilder().setCustomId("view_profile").setLabel("👤 View Profile").setStyle(ButtonStyle.Primary),
-    new ButtonBuilder().setCustomId("continue_search").setLabel("🔍 Continue Search").setStyle(ButtonStyle.Success),
-    new ButtonBuilder().setCustomId("open_marketplace").setLabel("🛒 Marketplace").setStyle(ButtonStyle.Secondary),
+    new ButtonBuilder().setCustomId("view_profile").setLabel("👤 Ver Perfil").setStyle(ButtonStyle.Primary),
+    new ButtonBuilder().setCustomId("continue_search").setLabel("🔍 Continuar Búsqueda").setStyle(ButtonStyle.Success),
+    new ButtonBuilder().setCustomId("open_marketplace").setLabel("🛒 Mercado").setStyle(ButtonStyle.Secondary),
   )
 
   return { embeds: [embed, optionsEmbed], components: [row] }

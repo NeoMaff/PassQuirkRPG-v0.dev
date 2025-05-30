@@ -1,14 +1,14 @@
-// tournament_panel_header.js - Header component for tournament rankings
+// tournament_panel_header.js - Componente de encabezado para clasificaciones de torneo
 
 function createTournamentHeader() {
   return {
-    title: "🏆 Weekly PvP Tournament Ranking",
-    color: 0xfee75c, // Gold color for tournament
+    title: "🏆 Clasificación del Torneo PvP Semanal",
+    color: 0xfee75c, // Color dorado para torneo
     thumbnail: {
       url: "https://cdn.discordapp.com/attachments/placeholder/tournament-trophy.png",
     },
     author: {
-      name: "PassQuirkRPG Tournament System",
+      name: "Sistema de Torneos PassQuirkRPG",
       iconURL: "https://cdn.discordapp.com/attachments/placeholder/tournament-icon.png",
     },
   }
@@ -16,14 +16,14 @@ function createTournamentHeader() {
 
 function createTournamentDescription() {
   return [
-    "**Prize Pool:**",
-    "🥇 **Rank 1:** 20,000 Gold",
-    "🥈 **Rank 2:** 10,000 Gold",
-    "🥉 **Rank 3:** 5,000 Gold",
-    "💰 **Rank 4-10:** 3,000 Gold",
-    "💰 **Rank 11-100:** 1,000 Gold",
+    "**Premios:**",
+    "🥇 **Rango 1:** 20,000 Oro",
+    "🥈 **Rango 2:** 10,000 Oro",
+    "🥉 **Rango 3:** 5,000 Oro",
+    "💰 **Rango 4-10:** 3,000 Oro",
+    "💰 **Rango 11-100:** 1,000 Oro",
     "",
-    "Below are the current top 10 ranked players:",
+    "A continuación se muestran los 10 mejores jugadores actuales:",
   ].join("\n")
 }
 
