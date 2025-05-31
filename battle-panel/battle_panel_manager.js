@@ -1,4 +1,4 @@
-// battle_panel_manager.js - Main manager for battle encounters
+// battle_panel_manager.js - Gestor principal para encuentros de batalla
 
 const { EmbedBuilder } = require("discord.js")
 const { createBattleHeader } = require("./battle_panel_header")
@@ -24,37 +24,37 @@ function createBattleEmbed(playerData, enemyData, locationData) {
   return { embeds: [embed], components: buttons }
 }
 
-// Battle result embed for after combat actions
+// Embed de resultado de batalla para después de las acciones de combate
 function createBattleResultEmbed(result, playerData, enemyData) {
   const embed = new EmbedBuilder()
-    .setTitle(`⚔️ Battle Result`)
+    .setTitle(`⚔️ Resultado de Batalla`)
     .setColor(result.victory ? 0x57f287 : 0xed4245)
     .setDescription(result.description)
     .addFields([
       {
-        name: "Damage Dealt",
-        value: `💥 ${result.damageDealt} damage`,
+        name: "Daño Causado",
+        value: `💥 ${result.damageDealt} daño`,
         inline: true,
       },
       {
-        name: "Damage Received",
-        value: `💔 ${result.damageReceived} damage`,
+        name: "Daño Recibido",
+        value: `💔 ${result.damageReceived} daño`,
         inline: true,
       },
       {
-        name: "Status",
-        value: result.victory ? "🏆 Victory!" : "💀 Defeat!",
+        name: "Estado",
+        value: result.victory ? "🏆 ¡Victoria!" : "💀 ¡Derrota!",
         inline: true,
       },
     ])
 
   if (result.victory && result.rewards) {
     embed.addFields({
-      name: "🎁 Rewards",
+      name: "🎁 Recompensas",
       value: [
-        `💰 Gold: +${result.rewards.gold}`,
+        `💰 Oro: +${result.rewards.gold}`,
         `⭐ XP: +${result.rewards.experience}`,
-        result.rewards.items ? `🎒 Items: ${result.rewards.items.join(", ")}` : "",
+        result.rewards.items ? `🎒 Objetos: ${result.rewards.items.join(", ")}` : "",
       ]
         .filter(Boolean)
         .join("\n"),

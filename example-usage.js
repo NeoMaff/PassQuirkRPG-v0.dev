@@ -7,7 +7,7 @@ const client = new Client({
 
 const panelManager = new BotPanelManager()
 
-// Example usage of the panels
+// Ejemplo de uso de los paneles
 client.on("interactionCreate", async (interaction) => {
   if (!interaction.isCommand() && !interaction.isButton()) return
 
@@ -16,7 +16,7 @@ client.on("interactionCreate", async (interaction) => {
       const { commandName } = interaction
 
       switch (commandName) {
-        case "inventory":
+        case "inventario":
           const playerData = {
             name: interaction.user.username,
             avatar: interaction.user.displayAvatarURL(),
@@ -31,7 +31,7 @@ client.on("interactionCreate", async (interaction) => {
           await panelManager.showInventory(interaction, playerData)
           break
 
-        case "battle":
+        case "batalla":
           const battlePlayerData = {
             name: interaction.user.username,
             level: 1,
@@ -41,20 +41,20 @@ client.on("interactionCreate", async (interaction) => {
             maxMp: 11,
           }
           const enemyData = {
-            name: "Monster4",
+            name: "Monstruo4",
             currentHp: 25,
             maxHp: 25,
             currentMp: 25,
             maxMp: 25,
           }
           const locationData = {
-            name: "Forbidden Tomb of the White Baron",
+            name: "Tumba Prohibida del Barón Blanco",
             battleImage: "https://cdn.discordapp.com/attachments/placeholder/battle.png",
           }
           await panelManager.showBattle(interaction, battlePlayerData, enemyData, locationData)
           break
 
-        case "tournament":
+        case "torneo":
           const tournamentData = {
             playerName: interaction.user.username,
             playerMedals: 6,
@@ -62,7 +62,7 @@ client.on("interactionCreate", async (interaction) => {
           await panelManager.showTournamentRanking(interaction, tournamentData)
           break
 
-        case "dungeon":
+        case "mazmorra":
           const dungeonPlayerData = {
             name: interaction.user.username,
             level: 1,
@@ -74,13 +74,13 @@ client.on("interactionCreate", async (interaction) => {
             medals: 528,
           }
           const dungeonData = {
-            name: "Forbidden Tomb of the White Baron",
+            name: "Tumba Prohibida del Barón Blanco",
             roomImage: "https://cdn.discordapp.com/attachments/placeholder/dungeon.png",
           }
           await panelManager.showDungeonNavigation(interaction, dungeonPlayerData, dungeonData)
           break
 
-        case "create-character":
+        case "crear-personaje":
           const newPlayerData = {
             name: interaction.user.username,
             characterAvatar: "https://cdn.discordapp.com/attachments/placeholder/character.png",
@@ -94,13 +94,13 @@ client.on("interactionCreate", async (interaction) => {
       await panelManager.handleButtonInteraction(interaction)
     }
   } catch (error) {
-    console.error("Error handling interaction:", error)
+    console.error("Error al manejar la interacción:", error)
     if (!interaction.replied) {
-      await interaction.reply({ content: "An error occurred while processing your request.", ephemeral: true })
+      await interaction.reply({ content: "Ocurrió un error al procesar tu solicitud.", ephemeral: true })
     }
   }
 })
 
-client.login("YOUR_BOT_TOKEN")
+client.login("TU_TOKEN_DE_BOT")
 
 module.exports = { client, panelManager }

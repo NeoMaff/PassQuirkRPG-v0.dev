@@ -1,4 +1,4 @@
-// inventory_panel_manager.js - Main manager combining all inventory components
+// inventory_panel_manager.js - Gestor principal que combina todos los componentes de inventario
 
 const { EmbedBuilder } = require("discord.js")
 const { createInventoryHeader } = require("./inventory_panel_header")

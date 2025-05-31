@@ -1,4 +1,4 @@
-// tournament_panel_manager.js - Main manager for tournament system
+// tournament_panel_manager.js - Gestor principal para el sistema de torneos
 
 const { EmbedBuilder } = require("discord.js")
 const { createTournamentHeader, createTournamentDescription } = require("./tournament_panel_header")
@@ -25,36 +25,36 @@ function createTournamentEmbed(playerData) {
   return { embeds: [embed], components: buttons }
 }
 
-// Tournament registration embed
+// Embed de registro de torneo
 function createTournamentRegistrationEmbed(playerData) {
   const embed = new EmbedBuilder()
-    .setTitle("🎯 Tournament Registration")
+    .setTitle("🎯 Registro de Torneo")
     .setColor(0x57f287)
-    .setDescription(`**${playerData.name}**, you have successfully registered for the Weekly PvP Tournament!`)
+    .setDescription(`**${playerData.name}**, ¡te has registrado exitosamente para el Torneo PvP Semanal!`)
     .addFields([
       {
-        name: "📅 Tournament Info",
+        name: "📅 Información del Torneo",
         value: [
-          "**Start Time:** Every Monday 8:00 PM UTC",
-          "**Duration:** 7 days",
-          "**Entry Fee:** Free",
-          "**Max Participants:** 100 players",
+          "**Hora de Inicio:** Todos los lunes 8:00 PM UTC",
+          "**Duración:** 7 días",
+          "**Cuota de Entrada:** Gratis",
+          "**Máximo de Participantes:** 100 jugadores",
         ].join("\n"),
         inline: false,
       },
       {
-        name: "⚔️ How to Participate",
+        name: "⚔️ Cómo Participar",
         value: [
-          "1. Challenge other players with `/pvp challenge @user`",
-          "2. Win battles to earn tournament points",
-          "3. Climb the leaderboard for better rewards",
-          "4. Check your ranking with `/tournament rank`",
+          "1. Desafía a otros jugadores con `/pvp desafiar @usuario`",
+          "2. Gana batallas para obtener puntos de torneo",
+          "3. Sube en la clasificación para obtener mejores recompensas",
+          "4. Comprueba tu clasificación con `/torneo rango`",
         ].join("\n"),
         inline: false,
       },
     ])
     .setFooter({
-      text: "Good luck in the tournament! May the best warrior win.",
+      text: "¡Buena suerte en el torneo! Que gane el mejor guerrero.",
       iconURL: playerData.avatar,
     })
     .setTimestamp()

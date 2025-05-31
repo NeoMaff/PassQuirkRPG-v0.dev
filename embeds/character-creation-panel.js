@@ -2,25 +2,25 @@ const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("
 
 function createCharacterCreationEmbed(playerData) {
   const embed = new EmbedBuilder()
-    .setTitle("✅ Confirmation accepted")
+    .setTitle("✅ Confirmación aceptada")
     .setColor(0x57f287)
     .setDescription(
-      `**${playerData.name}**, you successfully created your character in Slot 2!\n\nYour adventure begins with:`,
+      `**${playerData.name}**, ¡has creado exitosamente tu personaje en la Ranura 2!\n\nTu aventura comienza con:`,
     )
     .addFields(
-      { name: "⚔️ Basic sword", value: "\u200B", inline: true },
-      { name: "❤️ x5 Health potions", value: "\u200B", inline: true },
-      { name: "💙 x5 Mana potions", value: "\u200B", inline: true },
-      { name: "🧹 x5 Cleanse potions", value: "\u200B", inline: true },
+      { name: "⚔️ Espada básica", value: "\u200B", inline: true },
+      { name: "❤️ x5 Pociones de salud", value: "\u200B", inline: true },
+      { name: "💙 x5 Pociones de maná", value: "\u200B", inline: true },
+      { name: "🧹 x5 Pociones de limpieza", value: "\u200B", inline: true },
     )
     .setThumbnail(playerData.characterAvatar || "https://cdn.discordapp.com/attachments/placeholder/character.png")
     .setFooter({
-      text: `Take a /quest and then /search to begin your adventure. • Today at ${new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" })}`,
+      text: `Usa /misión y luego /buscar para comenzar tu aventura. • Hoy a las ${new Date().toLocaleTimeString("es-ES", { hour: "2-digit", minute: "2-digit" })}`,
     })
 
   const row = new ActionRowBuilder().addComponents(
-    new ButtonBuilder().setCustomId("start_quest").setLabel("🗺️ Start Quest").setStyle(ButtonStyle.Primary),
-    new ButtonBuilder().setCustomId("view_character").setLabel("👤 View Character").setStyle(ButtonStyle.Secondary),
+    new ButtonBuilder().setCustomId("start_quest").setLabel("🗺️ Iniciar Misión").setStyle(ButtonStyle.Primary),
+    new ButtonBuilder().setCustomId("view_character").setLabel("👤 Ver Personaje").setStyle(ButtonStyle.Secondary),
     new ButtonBuilder().setCustomId("tutorial").setLabel("📖 Tutorial").setStyle(ButtonStyle.Secondary),
   )
 

@@ -1,4 +1,4 @@
-// tournament_panel_body.js - Body component with player rankings
+// tournament_panel_body.js - Componente del cuerpo con clasificaciones de jugadores
 
 function createTournamentBody() {
   const rankings = {

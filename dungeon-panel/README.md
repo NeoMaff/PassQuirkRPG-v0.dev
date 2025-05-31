@@ -1,22 +1,14 @@
-# Dungeon Panel - PassQuirkRPG Bot
+# Panel de Mazmorra - Bot PassQuirkRPG
 
-## Purpose
-This folder contains the complete Discord embed code for the dungeon navigation system based on the reference images showing dungeon exploration. The panel displays room descriptions, player stats, navigation options, and dungeon imagery.
+## Propósito
+Esta carpeta contiene el código completo de embed de Discord para el sistema de navegación de mazmorras basado en las imágenes de referencia que muestran la exploración de mazmorras. El panel muestra descripciones de salas, estadísticas del jugador, opciones de navegación e imágenes de mazmorras.
 
-## Structure
-- `dungeon_panel_header.js` - Header with dungeon name and exploration text
-- `dungeon_panel_body.js` - Player stats, room image, and navigation description
-- `dungeon_panel_footer.js` - Direction buttons and action options
-- `dungeon_panel_manager.js` - Main manager that combines all components
+## Estructura
+- `dungeon_panel_header.js` - Encabezado con nombre de mazmorra y texto de exploración
+- `dungeon_panel_body.js` - Estadísticas del jugador, imagen de sala y descripción de navegación
+- `dungeon_panel_footer.js` - Botones de dirección y opciones de acción
+- `dungeon_panel_manager.js` - Gestor principal que combina todos los componentes
 
-## Features
-- Dungeon room navigation (Left, Straight, Right)
-- Player stat display (HP, MP, Gold, Medals)
-- Room atmosphere descriptions
-- Dungeon imagery display
-- Action buttons (Potion, Abandon)
-
-## Usage
-\`\`\`javascript
-const { createDungeonEmbed } = require('./dungeon_panel_manager');
-const embed = createDungeonEmbed(playerData, dungeonData);
+## Características
+- Navegación de salas de mazmorra (Izquierda, Recto, Derecha)
+- Visualización de estadísticas del jugador (PS

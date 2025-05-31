@@ -1,22 +1,22 @@
-# Battle Panel - PassQuirkRPG Bot
+# Panel de Batalla - Bot PassQuirkRPG
 
-## Purpose
-This folder contains the complete Discord embed code for the battle system panel based on the reference images showing combat encounters. The battle panel displays player vs enemy combat with HP/MP stats, battle scene images, and action buttons.
+## Propósito
+Esta carpeta contiene el código completo de embed de Discord para el sistema de panel de batalla basado en las imágenes de referencia que muestran encuentros de combate. El panel de batalla muestra el combate jugador contra enemigo con estadísticas de PS/PM, imágenes de escenas de batalla y botones de acción.
 
-## Structure
-- `battle_panel_header.js` - Header with location and encounter description
-- `battle_panel_body.js` - Combat stats, HP/MP display, and battle image
-- `battle_panel_footer.js` - Action buttons (Shoot, Bane, Heal, Potion, Defend, Escape)
-- `battle_panel_manager.js` - Main manager that combines all components
+## Estructura
+- `battle_panel_header.js` - Encabezado con ubicación y descripción del encuentro
+- `battle_panel_body.js` - Estadísticas de combate, visualización de PS/PM e imagen de batalla
+- `battle_panel_footer.js` - Botones de acción (Disparar, Maldición, Curar, Poción, Defender, Escapar)
+- `battle_panel_manager.js` - Gestor principal que combina todos los componentes
 
-## Features
-- Player vs Enemy stat comparison
-- HP/MP bars with current/max values
-- Battle scene images
-- Combat action buttons
-- Location-based encounters
+## Características
+- Comparación de estadísticas de Jugador vs Enemigo
+- Barras de PS/PM con valores actuales/máximos
+- Imágenes de escenas de batalla
+- Botones de acción de combate
+- Encuentros basados en ubicación
 
-## Usage
+## Uso
 \`\`\`javascript
 const { createBattleEmbed } = require('./battle_panel_manager');
 const embed = createBattleEmbed(playerData, enemyData, locationData);

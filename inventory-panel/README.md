@@ -1,22 +1,22 @@
-# Inventory Panel - PassQuirkRPG Bot
+# Panel de Inventario - Bot PassQuirkRPG
 
-## Purpose
-This folder contains the complete Discord embed code for the inventory system panel based on the reference image "Diseño para la tienda y diálogos con los NPC". The inventory panel displays player items with descriptions, stats, and values in a paginated format.
+## Propósito
+Esta carpeta contiene el código completo de embed de Discord para el sistema de panel de inventario basado en la imagen de referencia "Diseño para la tienda y diálogos con los NPC". El panel de inventario muestra los objetos del jugador con descripciones, estadísticas y valores en un formato paginado.
 
-## Structure
-- `inventory_panel_header.js` - Header section with title and player info
-- `inventory_panel_body.js` - Main content with items, descriptions, and stats
-- `inventory_panel_footer.js` - Footer with pagination and action buttons
-- `inventory_panel_manager.js` - Main manager that combines all components
+## Estructura
+- `inventory_panel_header.js` - Sección de encabezado con título e información del jugador
+- `inventory_panel_body.js` - Contenido principal con objetos, descripciones y estadísticas
+- `inventory_panel_footer.js` - Pie de página con paginación y botones de acción
+- `inventory_panel_manager.js` - Gestor principal que combina todos los componentes
 
-## Features
-- Paginated item display (page 1 of 3 format)
-- Item descriptions with RPG stats
-- Gold value display for each item
-- Navigation buttons (Previous/Next/Close)
-- Equipment status indicators
+## Características
+- Visualización paginada de objetos (formato página 1 de 3)
+- Descripciones de objetos con estadísticas RPG
+- Visualización del valor en oro de cada objeto
+- Botones de navegación (Anterior/Siguiente/Cerrar)
+- Indicadores de estado del equipo
 
-## Usage
+## Uso
 \`\`\`javascript
 const { createInventoryEmbed } = require('./inventory_panel_manager');
 const embed = createInventoryEmbed(playerData, page);
