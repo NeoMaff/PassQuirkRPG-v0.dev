@@ -1,0 +1,23 @@
+{
+  "name": "discord-yellow-theme-bot",
+  "version": "1.0.0",
+  "description": "Bot de Discord con embeds temáticos amarillos, líneas animadas y emojis dinámicos",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "nodemon bot.js",
+    "test": "node test/embed-tests.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": ["discord", "bot", "embed", "yellow-theme", "animated", "decorative"],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
