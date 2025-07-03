@@ -1,5 +1,5 @@
-import TutorialPassQuirkCompletoAvanzado from "../tutorial-passquirk-completo-avanzado"
+import DocumentacionPDFCompleta from "../documentacion-pdf-completa"
 
 export default function Page() {
-  return <TutorialPassQuirkCompletoAvanzado />
+  return <DocumentacionPDFCompleta />
 }
